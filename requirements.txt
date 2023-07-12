@@ -1,0 +1,7 @@
+streamlit
+plotly
+datetime
+pandas 
+requests
+seaborn
+python-dotenv
