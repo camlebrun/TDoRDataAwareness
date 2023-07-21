@@ -3,23 +3,7 @@ import requests
 
 st.set_page_config(layout = "wide", page_title = "Home")
 st.markdown("<h1 style='text-align: center'>When Data meet: transphobia around the world </h1>", unsafe_allow_html=True)
-def page_0():
-    st.empty()
-def page_2():
-    st.empty()
 
-def page3():
-    st.empty()
-
-def page4():
-     st.empty()
-
-page_names_to_funcs = {
-    "🏠Home": page_0,
-    "Global Picture": page_2,
-    "2_Where": page3,
-    "cluster" :page4
-}
 st.warning(icon='⚠️', body="It is important to note that the reported number of deaths among transgender individuals may not accurately reflect the true extent of the problem.")
 
 st.markdown("<h2 style='text-align: center'>About TDoR</h2>", unsafe_allow_html=True)

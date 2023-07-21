@@ -61,7 +61,7 @@ geo_world_ok = {"type": "FeatureCollection", "features": countries_geo}
 tdor_data["ratio"] = tdor_data["ratio"].astype(float)
 tdor_data = tdor_data.loc[tdor_data["ratio"] != 0]
 year_option = tdor_data["year"].unique().tolist()
-year = st.select_slider("", year_option)
+year = st.select_slider("**Select year**", year_option)
 min_ratio_g = tdor_data["ratio"].min()
 max_ratio_g = tdor_data["ratio"].max()
 tdor_data = tdor_data[tdor_data["year"] == year]

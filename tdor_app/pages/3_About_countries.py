@@ -207,4 +207,15 @@ with st.expander("Show percentage of victims by country"):
     tdor_data_grouped["Percentage"] = tdor_data_grouped["Percentage"].apply(
         lambda x: "{:.1f}%".format(x))
     tdor_data_grouped = tdor_data_grouped.drop(columns="total")
-    st.table(tdor_data_grouped.style.set_precision(1))
+    st.table(tdor_data_grouped)
+    # graph plolty sur tdor_data_grouped
+    fig = px.bar(tdor_data_grouped, x=tdor_data_grouped.index,
+                    y="Percentage", text=tdor_data_grouped["Percentage"])
+    fig.update_traces(texttemplate='%{text}', textposition='outside')
+    fig.update_layout(uniformtext_minsize=8, uniformtext_mode='hide',
+                        xaxis={'tickangle': 45, 'dtick': 2},
+                        yaxis={'title': 'Percentage of victims'})
+    fig.layout.xaxis.fixedrange = True
+    fig.layout.yaxis.fixedrange = True
+    st.plotly_chart(fig, use_container_width=True)
+    
